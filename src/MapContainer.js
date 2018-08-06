@@ -47,6 +47,10 @@ class MapContainer extends Component {
   }
 
   // Handles when a venue on the list is clicked, the info window pops and the marker bounces
+  keyPressInfoWindow = (evt) => {
+    evt.key === 'Enter' ? this.clickListInfoWindow(evt) : null
+  }
+
   clickListInfoWindow = (evt) => {
     this.setState({
       venuePhotoUrl: '',
@@ -136,7 +140,7 @@ class MapContainer extends Component {
               {locations
                 .filter(location => location.showMarker === true)
                 .map(location => (
-                  <li tabIndex="0" role="menulist" aria-label={location.name} className="venue" id={location.name} key={location.name} onClick={this.clickListInfoWindow}>{location.name}</li>
+                  <li tabIndex="0" role="menuitem" aria-label={location.name} className="venue" id={location.name} key={location.name} onClick={this.clickListInfoWindow} onKeyPress={this.keyPressInfoWindow}>{location.name}</li>
                 ))}
             </ul>
           </div>
