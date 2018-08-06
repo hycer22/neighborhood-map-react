@@ -110,6 +110,11 @@ class MapContainer extends Component {
     }
   }
 
+  checkboxByEnter = (evt) => {
+    let checkbox = document.getElementById('menu-toggle');
+    evt.key === 'Enter' ? checkbox.checked = !checkbox.checked : null
+  }
+
   render() {
     const {locations, venuePhotoUrl, venueHours, activeMarker, showInfoWindow, selectedVenue, query} = this.state;
 
@@ -118,10 +123,12 @@ class MapContainer extends Component {
       lng: -3.2021022
     }
 
+
+
     return (
       <div>
         <div id="menu-container">
-          <input type="checkbox" aria-label="menu" id="menu-toggle" />
+          <input type="checkbox" tabIndex="0" onKeyPress={this.checkboxByEnter} aria-label="menu" id="menu-toggle" />
           <span id="bars" className="bar1"></span>
           <span id="bars" className="bar2"></span>
           <span id="bars" className="bar3"></span>
