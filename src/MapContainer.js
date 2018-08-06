@@ -123,8 +123,6 @@ class MapContainer extends Component {
       lng: -3.2021022
     }
 
-
-
     return (
       <div>
         <div id="menu-container">
