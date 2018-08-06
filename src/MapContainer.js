@@ -136,7 +136,7 @@ class MapContainer extends Component {
               {locations
                 .filter(location => location.showMarker === true)
                 .map(location => (
-                  <li tabIndex="0" role="tablist" aria-label={location.name} className="venue" id={location.name} key={location.name} onClick={this.clickListInfoWindow}>{location.name}</li>
+                  <li tabIndex="0" role="menulist" aria-label={location.name} className="venue" id={location.name} key={location.name} onClick={this.clickListInfoWindow}>{location.name}</li>
                 ))}
             </ul>
           </div>

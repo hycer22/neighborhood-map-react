@@ -10,6 +10,13 @@ Udacity FEND Nanodegree assignment.  Using react to build a map application with
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
+## Offline First
+
+Since the service worker only works in the production environment.  To test the service worker:
+
+* Build the project with `npm run build`
+* To install serve, run `npm install -g serve`, then `serve -s build`
+
 ## Technology
 
 * HTML
